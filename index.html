@@ -307,27 +307,38 @@
             <div class="response_wrapper" id="response7Yes">
               <img class="question-icon" alt="Icon" src="img/icon-positive.png">
               <p>You said that you believe that you have all of the information you need to make a decision.  That’s terrific!  Our goal is to help you make a well-informed decision.  Whether you decide to participate in a clinical trial or not is up to you.  If you do have more questions as you go through treatment, please contact your doctor or our Clinical Trial Navigator at *.</p>
-              <input type="button" value="Finish" onclick="calculate()">
+              <input class="btn btn-default next" type="button" value="Finish" onclick="calculate()">
             </div>
 
             <div class="response_wrapper" id="response7No">
               <img class="question-icon" alt="Icon" src="img/icon-negative.png">
               <p>You said that you need to know more about clinical trials make a decision about joining a clinical trial. Our goal is to help you make a well-informed decision.  No one should join a clinical trial or research study until they feel like they know enough to feel comfortable. You can learn more about clinical trial participation by reading our website.  We also have a short video about how to find a clinical trial and what to expect if you do enroll.  Click here to watch it.  If you have more questions at any point, please contact your doctor or our Clinical Trial Navigator at *.</p>
-              <input type="button" value="Finish" onclick="calculate()">
+              <input class="btn btn-default next" type="button" value="Finish" onclick="calculate()">
             </div>
 
             <div class="response_wrapper" id="response7Unsure">
               <img class="question-icon" alt="Icon" src="img/icon-unsure.png">
               <p>You said that you are not sure whether you have enough information to make a decision about joining a clinical trial. Our goal is to help you make a well-informed decision.  Whether you decide to participate in a clinical trial or not is up to you.  You can learn more about clinical trial participation by reading our website.  We also have a short video about how to find a clinical trial and what to expect if you do enroll.  Click here to watch it.  If you have more questions at any point, please contact your doctor or our Clinical Trial Navigator at *.</p>
-              <input type="button" value="Finish" onclick="calculate()">
+              <input class="btn btn-default next" type="button" value="Finish" onclick="calculate()">
             </div>
 
 
             <div class="response_wrapper" id="final">
-              <div id="dashboard"></div>
-              <p>Your score is: <span id="score"></span></p>
-              <p id="startOver">Start Over</p>
+              <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                      <h3 class="progress-title">Score:</h3>
+                      <div class="progress progress-background">
+                          <div id="progress-bar" class="progress-bar">
+                              <div class="progress-value"><span id="score"></span></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="btn btn-default next" id="startOver">Start Over</div>
+
+
             </div>
+
 
             </div>
           </div>
@@ -345,10 +356,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/raphael-2.1.4.min.js"></script>
-    <!--<script src="../justgage-1.0.1.js"></script>-->
-    <script src="js/justgage.js"></script>
 
     <script src="js/main.js"></script>
 

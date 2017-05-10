@@ -38,7 +38,10 @@
   margin-top: 30px;
   display: block;
 }
-
+#startOver{
+  display: inline-block;
+  margin: 40px auto;
+}
 
 /*NAVBAR*/
 .navbar-default {
@@ -75,7 +78,7 @@
   color: #fff;
 }
 .current{
-  background-color: #27CBC0;
+  background-color: rgba(0, 155, 144, .2);
 }
 .question-counter{
   text-align: center;
@@ -90,54 +93,113 @@
 
 /*RADIO BUTTONS*/
 
+.question_wrapper input[type="radio"],
+.question_wrapper input[type="checkbox"]{
+  display: none;
+}
+.radio_wrapper {
+  margin-bottom: 0px;
+  padding-left: 80px;
+}
+.radio_wrapper label {
+  position: relative;
+}
+.radio_wrapper span::before,
+.radio_wrapper span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.radio_wrapper span.radio:hover {
+  cursor: pointer;
+}
+.radio_wrapper span.radio::before {
+  width: 22px;
+  height: 22px;
+  background-color: #D8D8D8;
+  left: -35px;
+  border-radius: 50%;
+  transition: all .2s; */
+}
+.radio_wrapper span.radio::after {
+  left: -32px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #D8D8D8;
+}
+.radio_wrapper span.radio:hover::after {
+  left: -32px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #27CBC0;
+  transition: background-color .2s;
+}
+input[type="radio"]:checked + label span.radio::after {
+  background-color: #009B90;
+}
 
-  .question_wrapper input[type="radio"],
-  .question_wrapper input[type="checkbox"]{
-    display: none;
-  }
-  .radio_wrapper {
-    margin-bottom: 0px;
-    padding-left: 80px;
-  }
-  .radio_wrapper label {
+/*Progress Bars*/
+
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 15px;
+}
+.progress{
+    height: 20px;
+    margin-top: 40px;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(left, rgb(226,80,65), rgb(251,160,38), rgb(30,188,97)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, rgb(226,80,65), rgb(251,160,38), rgb(30,188,97)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, rgb(226,80,65), rgb(251,160,38), rgb(30,188,97)); /* For Fx 3.6 to 15 */
+    background: linear-gradient(to right, rgb(226,80,65), rgb(251,160,38), rgb(30,188,97));
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    margin-bottom: 30px;
+}
+.progress .progress-bar{
     position: relative;
-  }
-  .radio_wrapper span::before,
-  .radio_wrapper span::after {
-    content: '';
+    -webkit-animation: animate-positive 2s;
+    animation: animate-positive 2s;
+}
+.progress .progress-bar:after{
+  content: "\f0dd";
+  font-family: fontawesome;
+  font-size: 20px;
+  position: absolute;
+  top: -18px;
+  right: -5px;
+    /*content: "";
+    width: 1px;
+    height: 50px;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-
-  /* Radio buttons */
-  .radio_wrapper span.radio:hover {
-    cursor: pointer;
-  }
-  .radio_wrapper span.radio::before {
-    width: 22px;
-    height: 22px;
-    background-color: #D8D8D8;
-    left: -35px;
-    border-radius: 50%;
-    transition: all .2s; */
-   }
-   .radio_wrapper span.radio::after {
-     left: -32px;
-     width: 16px;
-     height: 16px;
-     border-radius: 50%;
-     background-color: #D8D8D8;
-   }
-   .radio_wrapper span.radio:hover::after {
-     left: -32px;
-     width: 16px;
-     height: 16px;
-     border-radius: 50%;
-     background-color: #27CBC0;
-     transition: background-color .2s; */
-   }
-   input[type="radio"]:checked + label span.radio::after {
-     background-color: #009B90;
-   }
+    top: -39px;
+    right: 0;*/
+}
+.progress .progress-value{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    position: absolute;
+    top: -30px;
+    right: 10px;
+}
+.progress.progress-background .progress-bar{
+  background-color: transparent;
+}
+.progress.progress-background .progress-bar:after{
+  color: #009B90;
+}
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive{
+    0% { width: 0%; }
+}

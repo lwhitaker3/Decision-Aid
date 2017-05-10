@@ -81,12 +81,18 @@ function start(){
 }
 
 function calculate(){
-  var score =   parseInt($('input[name="question1"]:checked').val()) + parseInt($('input[name="question2"]:checked').val()) + parseInt($('input[name="question3"]:checked').val()) + parseInt($('input[name="question4"]:checked').val()) + parseInt($('input[name="question5"]:checked').val()) + parseInt($('input[name="question6"]:checked').val()) + parseInt($('input[name="question7"]:checked').val());
+  var score = parseInt($('input[name="question1"]:checked').val()) + parseInt($('input[name="question2"]:checked').val()) + parseInt($('input[name="question3"]:checked').val()) + parseInt($('input[name="question4"]:checked').val()) + parseInt($('input[name="question5"]:checked').val()) + parseInt($('input[name="question6"]:checked').val()) + parseInt($('input[name="question7"]:checked').val());
+  var percent = (score + 5) * 10;
   $("#final").addClass("display");
   $('#response7Unsure').removeClass("display");
   $('#response7Yes').removeClass("display");
   $('#response7No').removeClass("display");
   $('#score').html(score);
+  $('#percent').html(percent);
+  $( "#progress-bar" ).css( "width", function() {
+    console.log(percent);
+    return percent + '%';
+  });
   $('#counter7').removeClass('current');
   $('#counter7').addClass('finished');
   $('#startOver').click(function() {
@@ -100,25 +106,5 @@ function calculate(){
     $('#counter1').addClass("current");
   });
 
-  var dashboard = new JustGage({
-      id: "dashboard",
-      value: score,
-      min: -5,
-      max: 5,
-      title: "Your Score",
-      label: "",
-      customSectors: [{
-              color : "#E25041",
-              lo : -5,
-              hi : -2
-            },{
-              color : "#FBA026",
-              lo : -2,
-              hi : 2
-            },{
-              color : "#00A885",
-              lo : 2,
-              hi : 5
-            }]
-    });
+
 }
